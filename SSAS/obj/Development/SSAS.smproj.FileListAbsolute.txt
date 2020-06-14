@@ -5,3 +5,10 @@ G:\MSBI\620\MSBI\SSAS\obj\Development\SSAS.smproj.CoreCompileInputs.cache
 G:\MSBI\620\MSBI\SSAS\obj\Development\Model.asdatabase
 G:\MSBI\620\MSBI\SSAS\obj\Development\Model.deploymentoptions
 G:\MSBI\620\MSBI\SSAS\obj\Development\Model.deploymenttargets
+G:\MSBI\620\MSBI\SQL_BI0620\SSAS\bin\Model.asdatabase
+G:\MSBI\620\MSBI\SQL_BI0620\SSAS\bin\Model.deploymenttargets
+G:\MSBI\620\MSBI\SQL_BI0620\SSAS\bin\Model.deploymentoptions
+G:\MSBI\620\MSBI\SQL_BI0620\SSAS\obj\Development\SSAS.smproj.CoreCompileInputs.cache
+G:\MSBI\620\MSBI\SQL_BI0620\SSAS\obj\Development\Model.asdatabase
+G:\MSBI\620\MSBI\SQL_BI0620\SSAS\obj\Development\Model.deploymentoptions
+G:\MSBI\620\MSBI\SQL_BI0620\SSAS\obj\Development\Model.deploymenttargets

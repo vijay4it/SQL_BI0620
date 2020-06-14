@@ -1,0 +1,10 @@
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\bin\Debug\SQL.dacpac
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\bin\Debug\SQL.dll
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\bin\Debug\SQL.pdb
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\obj\Debug\SQL.sqlprojAssemblyReference.cache
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\obj\Debug\Model.xml
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\obj\Debug\refactor.xml
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\obj\Debug\postdeploy.sql
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\obj\Debug\predeploy.sql
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\obj\Debug\SQL.dll
+G:\MSBI\620\MSBI\SQL_BI0620\SQL\obj\Debug\SQL.pdb
