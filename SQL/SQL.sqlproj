@@ -64,4 +64,7 @@
     <Folder Include="trigger" />
     <Folder Include="adhoc_scripts" />
   </ItemGroup>
+  <ItemGroup>
+    <Build Include="Table\Customer.sql" />
+  </ItemGroup>
 </Project>
