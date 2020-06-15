@@ -1,0 +1,129 @@
+1.What is Data?
+
+They will facts and statics
+ fact i am laptop
+ my ip adress
+  when i am open they will recommedations
+  this 
+  
+ IP address :statics
+ They will capture what i am looking facts
+ 
+ they will process come with business logic
+ 
+ they will suggesst be recommended proiducts.
+ 
+ Earlier if we go to banks
+ 
+ you will have lot of books
+ when i 
+ 
+ After some kind MS access Data 
+ 
+ 
+ Database Management :
+ Facts and Statics 
+ 
+ Microsoft is one of the vendor
+ oracle 
+ IBM DB2
+ Postgre
+ NoSQL
+ 
+ MSSQL Storage system provided by Microsoft
+ 
+ Database
+ RDBMS--
+ --Relation Database Managemtn solution
+ 
+ Database components:
+ Sql Server management studio
+ 
+ SAIRAM\MSBI
+ One machine i can install 50 Instance
+ 
+ Software --1 Sql server 2012 instance1
+  Software --1 Sql server 2010 instance1
+  Software --1 Sql server 2014 instance1
+ Software --2 Sql server 2019 instance 2
+ 
+ Software -2010-2012
+ 
+ in a single machine we can install 
+ 5o insatn
+ 
+ Servername/instancename  --database engine
+ 
+ SSMS--SQL server Management studio
+ 
+ Client server archtecture
+ 
+ Databases:
+ Two types:
+ 
+ 1.System Databases
+        Master--Login information heart of the sql server
+		Model--Template Database
+		TempDb--Temporary objects
+		MSDB--it is for schduling information
+2.User defined Database
+    --OLTP
+	--OLAP 
+3.Login and User 
+
+IT Park Main gate--you need prove your identity
+Login Server
+
+We will have building --you need to prove identity
+User    Database
+--
+Short cut keys:
+For Object explorer:F8
+
+Query execution:
+To execute query: we can click on  F5 or ALT+X 
+
+SQL --Storage Heart of Microsoft
+SSIS--Integration services ETL Extraction
+Transformation loading 
+
+Super Market--Head office is calfornia USD
+   
+India INR
+china CNY
+UK GBP
+Europe EURO
+
+SSRS: Sql server Reporting services 
+we will show the reports bases on the business requirement
+
+SSAS: It will be reporting but 
+it will performance benifts
+
+Power BI :This is also for presentation layer
+it will be analytical purpose
+
+
+
+
+
+
+
+
+
+
+
+
+		
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
