@@ -1,0 +1,109 @@
+1.RECAP SESSION
+Q&A of yesterday's Session
+
+ER Modeling
+Entity relationship
+
+Customer(Entity)      Bankaccount(Entity)
+         Customer           Bank of America
+		 
+
+Entity(Tables)
+Attributes(Columns)
+relationship(pkey key)
+
+Customer table --Strong table
+   (cid,cname,caddress,cmobile)
+     1     vijay cdsfvd  sdcvdsc
+	 
+	 
+	 Student
+	 Studname mobilenumber
+	 Vijay     8050238628
+	 Vijay      465498768789
+  Week entity
+  Cards
+  Card_id
+  cid
+  Cardtype
+
+Entity--Strong entity
+       --Week Entity
+	   
+Attribues:Key attributes,Mutilvalued,dervied,composte
+
+Address customer:
+Pincode street name country--Adress composite address
+pin code 
+Street name 
+cmobile
+1234,64656
+
+Empid emname salary avg_salary
+                     AVG(SALARY)
+
+Relation ships:1-1,1-Many,Many-one,Many-many
+1:1
+
+person will have one SSN
+person--SSN
+1<--->1
+
+Person can has one passport number
+One passport number can be given to one person only
+
+1-Many
+-----
+Customer can place mutiple order order1,order2,order3
+Order1
+
+C--o1,o2,o3 --possible
+o1--c1,c2,c3--not possible
+Many--one
+---------
+Many student can study in the same college--Possible
+
+Same student cannot study in muliple college--Not possibe
+
+Many --many
+student can develop mutiple projects
+same project can be developed by mutiple stuident
+
+S1--App1,APP2
+APp1,APP2--S2,S3
+
+Customer  Vijay
+Cards   --mutiple credit cards from different banks
+Transactions --i can do mutiple Transactions
+
+Rules:
+Schema should not be duplicated in a Database
+Table name should not be duplicated in a schema
+Column name should be duplicated in table
+In the Single data type we should not multiple information
+
+
+CREATE TABLE  member 
+          (  id  tinyint IDENTITY(1,1)
+		    name varchar(200)
+			mobile_number varchar(10)
+		   )
+		   
+
+CREATE TABLE  <table_name> 
+          (  <Column_name>  <Datatype> IDENTITY(1,1)
+		    <Column_name> <Datatype>
+			<Column_name>  <Datatype>
+		   )
+		   
+String Data types:
+CHAR
+VARCHAR
+NCHAR
+NVARCHAR
+
+
+
+
+
+
