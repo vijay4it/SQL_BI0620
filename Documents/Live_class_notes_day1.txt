@@ -105,25 +105,19 @@ it will be analytical purpose
 
 
 
+1.Data
+2.DATABASE
+3.server --instance--Database--schema --table
+4.login and   user
+5.Sql components
+6.SSMS,SQL server ,SSIS ,SSAS,SSRS
+7.SSMS we are stared working
+8.Types of Databases 1.System and user defined databases
+8.DDL,DML,DQL,DCL
+9.DDL
+10.Created DATABASE
+11.Backup the DATABASE
+12.Restored the DATABASE
+13.Drop the DATABASE
 
 
-
-
-
-
-
-
-
-		
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
