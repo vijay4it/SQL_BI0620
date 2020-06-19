@@ -14,12 +14,7 @@ Keys
 	 --surrogate key
 	 --Foreign key
 	 
-Normalization
 
-Contraints
-Update 
-delete
-Cascading rules
 ---------------------
 DROP TABLE member
 CREATE TABLE  member 

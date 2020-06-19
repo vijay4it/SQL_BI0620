@@ -1,0 +1,66 @@
+1.Recap of yesterdays Session
+2.Q&A
+-=====================
+3.CHECK Constraint
+CHECK CONSTRAINT=limits the range of values in column.  It is always bigger than 0.
+
+4.DEFAULT Constraint
+==============
+
+DEFAULT=provides  the default value if Input Values is not specified
+
+
+5.Normalization
+----------------------
+Normalization In relational database design, the process of organizing data to reduce redundancy is called normalization. 
+Normalization usually involves dividing a database into two or more tables and defining relationships between the tables.
+the goal is to isolate data so that Inserts, Deletes and Updates can be made in just one table and then changes pushed to he rest of the database using the defined relationships.
+BENEFITS OF NORMALIZATION
+-- eliminating redundant(dublicates) data and data inconsistency (the same data in all tables) within a DB
+--maximize the stability of data structure (ex. The same data in all tables. the same last name in all department.)
+FORMs of NORMALIZAITON:
+- 1NF -(First Normal Form) - data is redundant( no dups), consistent(unique names), unique data types and atomic( one tulip(cell) has to have one value) + PK (primary key)
+- 2NF -- should be in first normal form (1NF) + (FK) and relationships between tables should be built using Foreign Key.
+-- 3NF  -- should in 2NF and Non-key values should move to their own tables . Non-key = values that does not depend on PK of the table. 
+
+--De‐normalization is the process of optimizing the performance of a database queries by adding redundant data
+--This is done to speed up database access by moving from higher to lower form of normalization.
+
+6.Cascading rules
+------------------------
+
+Cascading referential integrity is the property of Foreign Key Constraint that tell SQL Server to perform certain actions when a primary key field in a primary key-foreign key relationship is updated or deleted.
+Foreign key constraint has 4 main delete and update rules : NO ACTION, CASCADE(all rows will be deleted or updated in referential tables), SET DEFAULT, SET NULL
+---------------------------------------------------
+
+7.DROP
+8.Truncate
+9.Difference between Delete,Truncate,DROP
+-================================
+
+1. First, we have to understand that both of these are DMLs, but
+-- Truncate: Microsoft says it is DML, but some other RDBMS tools call it DDL..
+-- Delete: DML
+
+--2. Performance
+-- Truncate: FASTER: removes all table data at once 
+-- Delete: WAYYYY SLOWER!!! delete removes data one by one, logs every row into transaction log
+
+--3. WHERE clause
+-- Truncate: no truncate in where clause, can only delete all rows 
+-- Delete: can delete some rows and all rows and you can use it with WHERE clause
+
+--4. Foreign Key references columns
+-- Truncate: if data is referenced by FK in table  it is not possible to truncate 
+-- Truncate: drop the constraints/truncate the table
+-- Delete: not possible if there is FK in the table, alter cascading referencial integrity property NO ACTION/CASCADE/SET NULL/Set DEfault
+
+--5 Can Truncate be rolled back??? answer is yes and no.
+-- Truncate: can be rolled back if it was used in explicit transaction, truncate can be rolled back within that transaction... in ANY other cases it cannot be rolled back.
+-- Delete: can be rolled back
+
+--6. Identity Column
+ -- truncate resets identity key
+ -- Delete will not reset identity key
+ ====================================================
+10.Weekend Assignment Discussion

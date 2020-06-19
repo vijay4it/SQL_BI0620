@@ -1,0 +1,65 @@
+1.RECAP SESSION 
+2.Q&A of yesterday's Session
+3.Identity Seed and increment show the demo by changing the values
+-------------------
+IDENTITY(SEED,INCREMENT)
+SEED--FROM WHEN MY SEQEUNCE SHOULD START
+INCREMENT --WHAT SHOULD BE MY NEXT SUBSEQEUENT NUMBER
+DROP TABLE customer
+CREATE TABLE customer(id    int identity(100,5)
+                     ,cname  varchar(50)
+					 )
+
+INSERT  
+  INTO customer
+  SELECT NEWID()
+  GO 2
+----------------
+4.SELECT
+------------------
+SELECT Column_List | *
+ FROM  <TABLE_NAME>
+ WHERE <CONDITION>
+
+-----------------------
+5.Update 
+----------------
+
+UPDATE member
+SET mem_name='VIJAY'
+WHERE member_id=1
+---------------------
+6.delete
+-----------------------
+DELETE
+ FROM member
+ WHERE member_id=1 
+ ------------------
+7.Contraints
+-----------------------
+ NOT NULL--RULE1
+ Unique constraint--It will allow one Null
+ PRIMARY KEY=Unique+NOT NULL
+ 
+ PRIMARY KEY WILL NOT have  NULLS
+ BY DEFAULT WHEN PKEY created on a table it will create clusted index
+ 
+  UNIQUE KEY WILL ALLOW ONE NULL 
+ BY DEFAULT WHEN UKEY created on a table it will create NON clusted index
+ 
+ Only 1 PK is allowed, Many UC are allowed per table 
+ 
+ 
+ 
+ 1.Apply a primary key on cname on column level
+ 2.Apply a primary key on cname using table level
+ 3.Apply a composite primary key on cname,cmobile using table level
+
+
+----------------------------
+1 NF
+1.Column name should not duplicated in the table
+2.Attribute should be mutivalued attrbute
+3.in the Coulmn it should have same domain data
+3.order does not matter
+
