@@ -39,7 +39,21 @@ They will facts and statics
  Database components:
  Sql Server management studio
  
- SAIRAM\MSBI
+LAPTOP-A9KPPM3U\MSSQLSERVER01
+SERVER --DEFAULT INSTANCE
+50 Name INSTANCE(MSSQLSERVER01)
+MSSQLSERVER01(Login)--32676 Databases(User)
+
+TITLE: Connect to Server
+------------------------------
+
+Cannot connect to LAPTOP-A9KPPM3U\MSSQLSERVER01.
+
+------------------------------
+ADDITIONAL INFORMATION:
+
+
+
  One machine i can install 50 Instance
  
  Software --1 Sql server 2012 instance1
@@ -117,7 +131,9 @@ it will be analytical purpose
 9.DDL
 10.Created DATABASE
 11.Backup the DATABASE
-12.Restored the DATABASE
+12.Restored the DATABASESELECT * FROM tableName TABLESAMPLE (10 PERCENT)
 13.Drop the DATABASE
+
+
 
 

@@ -1,0 +1,55 @@
+Cascade rules:
+----------------
+Dept --Employee
+
+When i delete from department what should to employee
+DELETE--NO ACTION
+DELETE--Cascade
+DELETE --SET DEFAULT
+DELETE--SET NULL
+
+
+UPDATE--NO ACTION
+UPDATE--Cascade
+UPDATE--SET DEFAULT
+UPDATE--SET NULL
+
+--------------------
+7.DROP
+8.Truncate
+9.Difference between Delete,Truncate,DROP
+
+
+-------------------------
+
+DECLARE @var_no_of_inserted INT
+DECLARE @var_no_of_updated INT
+
+
+  INSERT
+   INTO test
+   select  'VIJAY'
+   UNION ALL
+      select  'fewfew'
+
+SET @var_no_of_inserted=@@ROWCOUNT
+
+
+   UPDATE test
+   set test_name='vijay'
+   where id<10
+
+   Select @var_no_of_updated=@@ROWCOUNT
+
+   SELECT @var_no_of_inserted as inserted_count
+       ,@var_no_of_updated as updated_count
+
+ 
+
+
+
+
+
+  
+
+

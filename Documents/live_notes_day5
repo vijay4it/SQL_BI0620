@@ -12,6 +12,10 @@ DEFAULT=provides  the default value if Input Values is not specified
 
 5.Normalization
 ----------------------
+1.In the table 
+
+
+
 Normalization In relational database design, the process of organizing data to reduce redundancy is called normalization. 
 Normalization usually involves dividing a database into two or more tables and defining relationships between the tables.
 the goal is to isolate data so that Inserts, Deletes and Updates can be made in just one table and then changes pushed to he rest of the database using the defined relationships.
