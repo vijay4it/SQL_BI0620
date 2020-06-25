@@ -1,0 +1,48 @@
+Recap of previous Session 
+Q&A--
+Table Schema
+Functions--(Userdefined functions)
+Database inbuilt functions
+(ROW_LEVEL_FUNCTIONS)
+  --Mathematical
+  
+  --=================
+  SELECT ABS(-10)--ABSOLUTE VALUE
+
+SELECT ABS(10)
+
+SELECT ABS(0)
+--------------------
+SELECT CEILING(10.6)--11
+SELECT FLOOR(10.6)--10
+
+SELECT POWER(3,3)
+
+SELECT ROUND(123.345864064,3)
+
+SELECT SIGN(-100)---  -1
+
+SELECT SIGN(0)---  0
+
+SELECT SIGN(100)--- 1
+
+select SQRT(81)
+
+select SQRT(25)
+
+SELECT SQUARE(3)
+--String functions
+-----------------------------
+
+
+-===================
+  --System functions
+  --Datetime functions
+  --Conversion functions
+  --Windows functions
+ COLUMN LEVEL Functions--
+ --SUM(AMOUNT)
+ --MIN
+ --MAX
+ --AVG
+ --COUNT

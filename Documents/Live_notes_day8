@@ -1,0 +1,179 @@
+1.Recap of Yesterday
+2.Q&A
+3.String functions
+--
+
+DECLARE @Email varchar(200)='    SQL'
+
+
+SELECT LEN(@Email)
+
+SELECT LTRIM(@Email)
+SELECT LEN(LTRIM(@Email))
+
+
+DECLARE @Email varchar(200)='    SQL'
+
+
+SELECT LEN(@Email)
+
+SELECT RTRIM(@Email)
+SELECT LEN(RTRIM(@Email))
+
+DECLARE @ename varchar(200)='SMITHSMITHSMITH'
+
+SELECT REPLACE(@ename,'I','Y')
+
+SELECT LOWER(@Email)
+SELECT UPPER(@Email)
+
+DECLARE @ename varchar(200)='SMITH'
+
+
+
+SELECT REPLICATE(@ename,2)
+
+DECLARE @ename varchar(200)='SMITH'
+
+
+
+SELECT REVERSE(@ename)
+ 
+DECLARE @ename varchar(200)='SMITH'
+
+
+
+SELECT  SOUNDEX('smith')
+
+
+SELECT  SOUNDEX('smyth')
+
+SELECT  SOUNDEX('COLOR')
+
+
+SELECT  SOUNDEX('COLOUR')
+
+
+ select * from Emp
+ where SOUNDEX(ename)=SOUNDEX('smith')
+
+ SELECT DIFFERENCE('smith','smyth')
+
+  SELECT DIFFERENCE('coloring','colour')
+  
+  SELECT SUBSTRING('VIJAY',3,1)--VIJ
+
+
+  SELECT STUFF('VIJAY',3,1,'rhtrhtrhtrhtrh')--VIrhtrhtrhtrhtrhAY
+
+     SELECT REPLACE('VIJAY','Y','R')--VIJAR
+	 
+	 
+--====================Datetime functions--------------
+
+SELECT GETDATE()--2020-06-24 20:39:51.940
+
+SELECT YEAR(GETDATE())--2020
+
+
+SELECT MONTH(GETDATE())--06
+
+
+SELECT DAY(GETDATE())--24
+
+SELECT DATENAME(QUARTER,'10/01/2020')
+
+SELECT DATENAME(dw,'03/25/1990')
+
+--WAQ to to identify the last date of the given month
+
+SELECT DATEADD(dd,2,getdate())
+
+SELECT DATEADD(dd,-1,'03/01/2020')
+
+SELECT EOMONTH('12/05/2020')
+
+SELECT DATEDIFF(year,'02/25/1990',getdate())
+-=======================================
+CONVERSION
+----------------
+SELECT CAST(12.23 as numeric(4,2))
+
+select CONVERT(numeric(4,2),12.23)
+https://www.mssqltips.com/sqlservertip/1145/date-and-time-conversions-using-sql-server/
+
+SYSTEM FUNCTION:
+
+
+SELECT *
+
+from emp
+
+ALTER TABLE emp
+ADD total_sal2 AS ([SAL]+isnull([COMM],(0))) ;
+
+select * from emp
+ 
+ select * from emp
+
+ SELECT *,COALESCE(firstname,middlename,last_name) Name
+ from TEST_COL
+ 
+ SELECT CHOOSE(MONTH(DATE),'WINTER','WINTER','SUMMER')
+ FROM test_date
+
+ select choose(1,'WINTER','WINTER','SUMMER','')
+
+ CREATE TABLE TEST_COL(firstname varchar(20),middlename varchar(20),last_name varchar(20))
+
+ INSERT
+  INTO TEST_COL
+ 
+SELECT NULL,NULL,NULL
+
+CREATE TABLE TEST_DATE(season_date date)
+INSERT
+ INTO TEST_DATE
+SELECT '01/01/2020'
+UNION ALL
+SELECT '02/01/2020'
+UNION ALL
+SELECT '03/01/2020'
+UNION ALL
+SELECT '04/01/2020'
+UNION ALL
+SELECT '05/01/2020'
+UNION ALL
+SELECT '06/01/2020'
+UNION ALL
+SELECT '07/01/2020'
+UNION ALL
+SELECT '08/01/2020'
+UNION ALL
+SELECT '09/01/2020'
+UNION ALL
+SELECT '10/01/2020'
+UNION ALL
+SELECT '11/01/2020'
+UNION ALL
+SELECT '12/01/2020'
+
+
+
+Select season_date,month(season_date)
+
+,CHOOSE( month(season_date)
+        ,'WINTER'
+		,'WINTER'
+		,'SUMMER'
+		,'SUMMER'
+		,'SUMMER'
+		,'MONSOON'
+		,'MONSOON'
+		,'MONSOON'
+		,'SPRING'
+		,'SPRING'
+		,'SPRING'
+		,'SPRING')season_name
+
+from TEST_DATE
