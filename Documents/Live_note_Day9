@@ -1,0 +1,142 @@
+1.Recap
+2.Q&A
+DECLARE @x INT=1
+SELECT DATALENGTH(@x)
+SELECT DATALENGTH(CAST(@x as tinyint))
+
+--============DELETE================
+
+DROP TABLE TEST
+CREATE TABLE TEST(id INT IDENTITY
+                 ,test_name varchar(200)
+         )
+
+
+  INSERT
+   INTO test
+   select NEWID()
+   GO 200
+
+
+   SELECT * from test
+
+   DELETE FROM test
+   --where id>100
+
+   --Select * from test
+
+   --TRUNCATE TABLE test
+
+   SELECT IDENT_CURRENT('test')
+   
+--============TRUNCATE================
+
+DROP TABLE TEST2
+CREATE TABLE TEST2(id INT IDENTITY
+                 ,test_name varchar(200)
+         )
+
+
+  INSERT
+   INTO test2
+   select NEWID()
+   GO 200
+
+
+   SELECT * from test2
+
+TRUNCATE TABLE test2
+
+   --Select * from test
+
+   --TRUNCATE TABLE test
+
+   SELECT IDENT_CURRENT('test2')
+   
+3.SYSTEM FUNCTIONS:
+  --------IDENT_CURRENT(TABLE_NAME)
+  ------- IDENT_SEED(TABLE_NAME)
+  ------IDENT_INCR(TABLE_NAME)
+  --------NEWID()
+  ----------NULLIF(100,200)=100
+  ----------NULLIF(100,100)=NULLIF
+  
+ -----CASE STATEMENT
+ 
+ Select ename
+     ,job as designation
+	 ,CASE WHEN job='PRESIDENT' THEN 'BIG BOSS'
+	     WHEN job='MANAGER' THEN 'BOSS'
+		    WHEN job='ANALYST' THEN 'SCIENTIST'
+			 ELSE 'Regular Employee' END as comment 
+from emp
+
+
+Requirment:
+Is COmm is equal to NULL Take SAL ,If Commission
+is not equal to null then Take SAL+COMM name as Total_sal
+ 
+ SELECT sal,comm,case when comm is NULL     then sal 
+                     When comm is not null then sal+comm
+					 end total_sal
+	from emp
+	
+--------------------------------
+Requirement2:
+IF Salary Greater than 3000 it is above target
+IF Salary equal to 3000 ON Target
+If Salary less than 3000 below Target
+
+
+SELECT *
+     ,SIGN((sal-3000))
+	 ,CASE  SIGN((sal-3000)) WHEN 1 THEN 'ABOVE TARGET'
+	                         WHEN 0 THEN 'ON TARGET'
+							 WHEN -1 THEN 'BELOW TARGET'
+							 END decision
+ FROM emp
+
+ DECLARE @no_feeling_well varchar(20)='NO'
+DECLARE @no_feeling_boring varchar(20)='YES'
+
+SELECT CASE WHEN @no_feeling_well='YES' THEN 'GO TO HOSIPITAL' ELSE 'HI' END as stat1
+       ,CASE WHEN @no_feeling_boring='YES' THEN 'GO TO MOVIE' END as stat2
+ 
+4.GROUP FUNCTIONS
+SELECT count(member_created_by) from member
+
+SELECT SUM(sal) from emp
+ 
+
+SELECT MIN(sal) from emp
+
+SELECT MAX(sal) from emp
+
+SELECT AVG(sal) from emp
+
+5.OPERATORS
+
+Arthemetic(+,-,*,/,%)
+Logical(IN,AND,OR,LIKE,BETWEEN,EXISTS)
+Assignment(=)
+concencatation(String1 +string2)
+comparision(>,<,>=,<=,<>,!=,!<,!>)
+]
+
+INCLASS EXERCISE:DONE
+-----------------------
+Assignment:
+
+1.WAQ to find the details of employees whose job is clerk
+2.WAQ to find the details of employees whose name starts between A and S
+3.SELECT * from emp 
+where soundex(ename)=soundex('smith')
+
+Can we rewrite above query using like operator
+
+4.WAQ to find the details of employees whose name does not starts between A and S
+
+5.WAQ to find the details of employees whose salary with in a range of 2500 and 4000
+
+ 
+      
