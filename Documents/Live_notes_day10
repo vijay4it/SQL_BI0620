@@ -1,0 +1,32 @@
+1.SET BASED OPERATOR
+
+Datasets of different sources should Same number 
+of columns and Same Data type
+
+DISTINCT =SORTING+NUMBERING+FILTERING
+
+  1.1)UNION =UNION ALL+DISTINCT
+  1.2)UNION ALL 
+  1.3)INTERSECT
+  1.4)EXCEPT
+  
+2.CLAUSES
+  2.1)WHERE
+  2.2)HAVING
+  2.3)GROUP BY
+
+Assignment:
+1.WAQ to find the highest salary for each department
+2.WAQ to find the highest salary for each Job
+3.WAQ to find the salaries for each department in it for each job
+4.WAQ to find the department where department contain more
+than 3 employees.
+5.WAQ to find the number of "clerks" working in each dept
+6.WAQ to find the department where department contain more
+than 2 employees and JOB should be "clerks" 
+  
+
+
+
+
+
