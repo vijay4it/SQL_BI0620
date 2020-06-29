@@ -14,6 +14,19 @@ DISTINCT =SORTING+NUMBERING+FILTERING
   2.1)WHERE
   2.2)HAVING
   2.3)GROUP BY
+  
+--============
+1.WHERE:It will be applied at row level to filter the data
+1.Having will be applied at Group level /Aggregated level to filter the data
+2.WHERE will be applied before Group by clause
+2.Having will be applied After Group by clause
+
+SELECT deptno,count(empno)
+  FROM emp
+ WHERE job='CLERK'
+  GROUP BY deptno
+  HAVING count(empno)>2
+-------------------------------------------
 
 Assignment:
 1.WAQ to find the highest salary for each department

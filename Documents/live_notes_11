@@ -1,5 +1,112 @@
-    2.4)ORDER BY
+CAST AND CONVERT--
+
+CAST=JUST DATA TYPE CONVERSION Means COnverting one 
+Data type to another Data type
+CONVERT=CAST+DATA STYLE formating(Optional)
+
+2.4)ORDER BY
+
+SELECT job,ename,hiredate 
+     
+from Emp
+order by ename asc
+
+SELECT job, hiredate,ename
+     
+from Emp
+order by 2 asc
+
 3.SUB QUERIES
 
---NORMAL SUBQUERY
+--NON-CORELATED SUBQUERY
 ---CORELATED SUB QUERIES
+
+1.WAQ  to get the details of the employye
+who is having the highest salary
+
+ select * from emp--TO FIND OUT HIGHEST SALARY with Employee details
+ where sal=(SELECT MAX(SAL)
+              FROM emp
+			  )
+			  
+
+ select * from emp--TO FIND OUT SECOND HIGHEST SALARY with Employee details
+ where sal=(SELECT MAX(SAL)
+              FROM emp
+			  where sal<(SELECT MAX(SAL)
+              FROM emp
+			  )
+			  )
+			  
+TO FIND OUT THIRD HIGHEST SALARY with Employee details--HW
+
+WaQ to find out the details of employess who is working 
+in sales Department
+
+WaQ to find out the details of employess who is working 
+in location mumbai
+
+WAQ to find the details of employees who are earning morethan the highest salary of dept no 30
+
+WAQ to find the details of employees who are earning lessthan the lowest salary of dept no 20
+
+WAQ to find the details of employees who are earning lessthan the highest salary of dept no 10 
+ 
+WAQ to find the details of employees who are earning 
+highest salary in each department
+
+WAQ to find the details of senior employees in each department
+
+ 
+--WAQ to find the details of employees who are earning 
+--highest salary in each department
+
+
+
+select *from emp 
+ where hiredate in (select min(hiredate) from emp 
+						 
+						 group by deptno
+                      )
+
+
+
+
+--WAQ to find out the departments in which employess are not working
+--Waq to find out customers who does not having atleast one card
+
+SELECT *
+ FROM dept d
+ where not exists(select *
+                   from emp as e
+				   where e.deptno=d.DEPTNO
+				   )
+
+
+
+
+
+
+select * from dept
+where DEPTno not in (Select DEPTNO from emp)
+ 
+
+ select * from dept
+ where DEPTNO =10 or DEPTNO=20 or DEPTNO=30 or DEPTNO=40
+
+  select * from dept
+ where DEPTNO  in (10,20,30,40)
+
+ 
+  select * from dept
+ where DEPTNO  not in (10,20,30,40)
+
+  
+
+ select * from dept
+ where DEPTNO =10 AND DEPTNO=20 AND DEPTNO=30 AND DEPTNO=40
+ 
+
+
+
+.
