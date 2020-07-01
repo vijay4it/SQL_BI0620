@@ -8,6 +8,12 @@ RIGHT JOIN
 FULL JOIN
 CROSS JOIN
 
+1.Select the employyes who does not have atleast one 
+phone number
+2.select a employee who is having more than one phone number
+3.select details of 3 employess having maximum salary
+
+
 Assignment:
 -------------------
 1.Find out the selling cost AVG for packages developed 
