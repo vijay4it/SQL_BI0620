@@ -1,0 +1,83 @@
+1.RECAP of Previous session
+2.Q&A
+3.Value based window function(Lag,Lead,First Value,Last Value)
+
+   1.Lag()
+ ----------WITH OUT PARTITION BY-----------
+       SELECT order_id
+	     ,customer_name
+		 ,city
+		 , order_amount
+		 ,order_date,
+	   LAG(order_date,1) OVER(ORDER BY order_date) prev_order_date
+	FROM [dbo].[Orders]
+----------WITH PARTITION BY-----------
+	 SELECT order_id
+	     ,customer_name
+		 ,city
+		 , order_amount
+		 ,order_date,
+	   LAG(order_date,1) OVER(PARTITION BY city ORDER BY order_date) prev_order_date
+	FROM [dbo].[Orders]
+	
+	
+	2.Lead()
+ ----------WITH OUT PARTITION BY-----------
+	     SELECT order_id
+	     ,customer_name
+		 ,city
+		 , order_amount
+		 ,order_date,
+	   LEAD(order_date,1) OVER(ORDER BY order_date) prev_order_date
+	FROM [dbo].[Orders]
+----------WITH PARTITION BY-----------	
+	 SELECT order_id
+	     ,customer_name
+		 ,city
+		 , order_amount
+		 ,order_date,
+	   LEAD(order_date,1) OVER(PARTITION BY city ORDER BY order_date) prev_order_date
+	FROM [dbo].[Orders]
+3.FIRST_VALUE,LAST_VALUE
+SELECT order_id,order_date,customer_name,city, order_amount,
+FIRST_VALUE(order_date) OVER(PARTITION BY city ORDER BY city) first_order_date,
+LAST_VALUE(order_date) OVER(PARTITION BY city ORDER BY city) last_order_date
+FROM [dbo].[Orders]
+
+4.Create a table from an existing table
+  SELECT * into order_backup
+   FROM orders
+   
+   SELECT * into order_defination
+   FROM orders
+   where 1=2
+   
+5.Copying data from one existing table to another table
+     
+	 INSERT
+	  INTO order_defination
+	 SELECT * 
+   FROM orders
+   
+6.Views.
+Syntax: Create view <view_name> 
+             with <view attributes>
+		AS 
+		SELECT columns from table name
+		with check option
+
+Under view attributes :
+    1.Encryption
+	2.Schema binding
+
+Type of views:
+
+  1.Simple views
+  2.complex views
+
+With check option:
+--------------
+
+
+	
+	

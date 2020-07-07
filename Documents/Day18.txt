@@ -1,0 +1,48 @@
+1.RECAP
+2.Q&A
+3.Views exercises
+4.check option
+5.schema binding
+
+Temporary tables
+  1.Local
+  2.Global
+  3.Derived tables
+  4.Table variable
+  5.CTE
+
+Conditional statement
+---------------
+IF--ELSE
+
+Merge clause
+----------
+Loops:
+--------
+While 
+Cursor just intrduction
+
+Function
+------------
+Scalar
+Table values--Inline,Multiline
+
+Stored procedures
+----------
+Error handling
+---------
+
+Triggers
+----------
+
+Output clause
+-----------
+
+Transactions
+-----------
+
+Isolation levels
+---------------
+
+Indexes
+---------

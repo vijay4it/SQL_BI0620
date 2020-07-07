@@ -1,0 +1,12 @@
+create table travel (
+origin nvarchar(20),
+destination nvarchar(20),
+duration int
+)
+
+insert 
+into travel values ('A','B',60),('A','B',40),('B','C',25),('B','A',25),('B','A',20)
+
+select * from travel
+
+--find average travel time from point a to b

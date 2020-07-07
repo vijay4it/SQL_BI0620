@@ -1,0 +1,14 @@
+1.Display Details of packages
+ whose sales crossed the 2000 mark
+ 2.Display the details of packages for which development
+ cost has been recovered
+ 3.How many programmers paid 5000 to 10000 for their course
+ 4.what is the AVG course fee for all courses
+ 5.How many programmers know either cobol or pascal
+ 6.How many programmers don't know PASCAL and c
+ 7.How old is the oldest Male Programmer
+ 8.What is the AVG age of Female programmers
+ 9.Calculate the Experience in years for each programmers
+ and display with their names in descending order
+ 10.Who are the programmers who celebrate their
+ birthday during current month.

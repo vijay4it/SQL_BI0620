@@ -1,0 +1,60 @@
+The questions will be based on 
+Tmember,Tprofile,TTradeleads
+TCountry,TTitle,TCompanyType
+TMember will contains member related information like 
+member name ,member created date etc
+Tprofile contains company related information like
+company name ,company website created date etc
+TTradeleads it is about products they want to sell or buy
+-------------------------------------------------
+1.Display the members created for 
+every year and every month
+Columns to be displayed Year,month,count_of_mem_created
+
+
+2.Display the members created for every year 
+and every month
+Columns to be displayed 
+Year,month,count_of_mem_created,count_of_active_mem,
+count_of_inactive_mem
+
+
+3.Display how many members created company profile.
+
+4.Display how many members created 
+company profile year and monthwise.
+
+5.Display how many members created company profile 
+and what type
+of company it is.
+6.Display country_name,member_full_name
+7.Display the count of company on year,month wise based on company
+company created date
+8.Display the count of active company ,inactive companies
+on year,month wise based on company
+company created date
+9.Display the count of companies having company website
+10.Display the Profile_name,Tradelead_name 
+11.Display the count of Tradeleads assocaiated for each profile_name
+12.Provide the statitics of Trade leads year and month wise
+13.WAQ to provide the query who is having more than product.
+13.WAQ to find the profile name which are posted same products
+14.Find out the duplicate products posted for the same profile
+15.Display the count of products on year,month wise based on company
+tradelead created date
+
+Logical Order of the execution
+FROM
+ON
+JOIN
+WHERE
+GROUP BY
+HAVING
+SELECT
+DISTINCT
+ORDER BY
+TOP
+
+
+
+

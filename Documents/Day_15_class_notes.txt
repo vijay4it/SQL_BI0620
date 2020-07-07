@@ -1,0 +1,51 @@
+1.RECAP
+2.Q and A
+--Windows functions
+
+Aggregate Window Functions
+SUM(), MAX(), MIN(), AVG(). COUNT()
+Ranking Window Functions
+RANK(), DENSE_RANK(), ROW_NUMBER(), NTILE()
+Value Window Functions
+LAG(), LEAD(), FIRST_VALUE(), LAST_VALUE()
+
+--Temporary tables
+
+--Working on some Questions
+
+
+
+SELECT order_id,order_date,customer_name,city, order_amount,
+ROW_NUMBER() OVER(ORDER BY order_id) [row_number]
+FROM [dbo].[Orders]
+ 
+
+SELECT order_id,order_date,customer_name,city, order_amount,
+ROW_NUMBER() OVER(PARTITION BY city ORDER BY order_amount DESC) [row_number]
+FROM [dbo].[Orders]
+
+
+SELECT order_id,order_date,customer_name,city, order_amount,
+NTILE(4) OVER(ORDER BY order_amount) [row_number]
+FROM [dbo].[Orders]
+ 
+ SELECT order_id,customer_name,city, order_amount,order_date,
+ --in below line, 1 indicates check for previous row of the current row
+ LAG(order_date,2) OVER(ORDER BY order_date) prev_order_date
+FROM [dbo].[Orders]
+
+
+SELECT order_id,customer_name,city, order_amount,order_date,
+ --in below line, 1 indicates check for next row of the current row
+ LEAD(order_date,1) OVER(ORDER BY order_date) next_order_date
+FROM [dbo].[Orders]
+
+
+SELECT order_id
+     ,order_date
+	 ,customer_name
+	 ,city
+	 , order_amount
+	 ,FIRST_VALUE(order_date) OVER(PARTITION BY city ORDER BY city) first_order_date
+      ,LAST_VALUE(order_date) OVER(PARTITION BY city ORDER BY city) last_order_date
+FROM [dbo].[Orders]
