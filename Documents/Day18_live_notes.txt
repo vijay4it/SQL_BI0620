@@ -1,0 +1,42 @@
+1.RECAP
+2.Q&A
+3.Views exercises
+4.check option
+CREATE TABLE CUSTOMER_check(ID INT,CNAME VARCHAR(50))
+
+INSERT
+ INTO CUSTOMER_check
+ SELECT 1,'VIJAY'
+
+ CREATE VIEW V_GET_CUSTOMER_check
+ AS
+ SELECT id,CNAME
+  FROM CUSTOMER_check
+  where id=1 WITH CHECK OPTION
+
+
+5.schema binding
+CREATE TABLE CUSTOMER_check(ID INT,CNAME VARCHAR(50))
+
+INSERT
+ INTO CUSTOMER_check
+ SELECT 1,'VIJAY'
+
+ CREATE VIEW v_get_CUSTOMER_check
+  WITH SCHEMABINDING
+ AS
+ SELECT id,CNAME
+  FROM dbo.CUSTOMER_check
+
+
+DROP TABLE CUSTOMER_check 
+
+DROP TABLE v_get_CUSTOMER_check
+
+
+Temporary tables
+  1.Local
+  2.Global
+  3.Derived tables
+  4.Table variable
+  5.CTE
