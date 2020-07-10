@@ -1,0 +1,154 @@
+
+CREATE TABLE emp_cond(empid int
+                 ,ename varchar(200)
+				 ,emp_loc varchar(200)
+				 ,dept_id varchar(200))
+ 
+INSERT
+  INTO emp_cond
+	SELECT 1,'VIJAY','INDIA','1'
+	UNION ALL
+	SELECT 2,'ABC','FRANCE','2'
+	UNION ALL
+	SELECT 3,'PQR','CHINA','3'
+	UNION ALL
+	SELECT 4,'DEF','ITALY','1'
+	UNION ALL
+	SELECT 5,'BHARGAV','HONGKONG','2'
+	UNION ALL
+	SELECT 6,'XYZ','BREZIL','3'
+		UNION ALL
+	SELECT 7,'GHI','Belgium','1'
+			UNION ALL
+	SELECT 8,'Reddy','LONDON','1'
+	
+----------------
+
+--Update emp_cond
+--set  emp_loc='USA'
+--where empid=1
+
+--Update emp_cond
+--set  emp_loc='INDIA'
+--where empid=2
+
+--INSERT
+-- INTO emp_cond
+-- SELECT 9,'Test','CHINA',1
+
+-- select * from emp_cond
+--Select * from emp_cond_target
+
+--INSERT
+-- INTO emp_cond_target
+-- SELECT 10,'jvdv','LONDON',1
+
+
+/*************IF MATCHING BETWEEN SRC and TRGT UPDATE************/
+
+UPDATE tgt
+ SET tgt.ename=src.ename
+    ,tgt.emp_loc=src.emp_loc
+	,tgt.dept_id=src.dept_id
+ FROM emp_cond src
+ INNER JOIN emp_cond_target tgt
+ ON src.empid=tgt.empid
+
+ /*************TGT NOT AVAILABLE BUT SRC AVAILABLE************/
+
+ INSERT
+  INTO emp_cond_target
+
+ SELECT  src.empid
+        ,src.ename
+		,src.emp_loc
+		,src.dept_id
+  FROM emp_cond src
+ LEFT JOIN emp_cond_target tgt
+ ON src.empid=tgt.empid 
+ WHERE tgt.empid  IS NULL
+
+ /*************TGT   AVAILABLE BUT SRC NOT AVAILABLE************/
+
+
+  DELETE tgt
+  FROM emp_cond_target  tgt 
+ LEFT JOIN  emp_cond  src
+ ON src.empid=tgt.empid 
+ WHERE src.empid  IS NULL
+ 
+-------------------
+DECLARE @count_of_employees INT 
+DECLARE @empno INT 
+DECLARE @var_ename varchar(200) 
+DECLARE @var_emp_loc varchar(200)
+DECLARE @var_dept_id INT
+
+select @count_of_employees=COUNT(*)
+from emp_cond
+
+ 
+WHILE(@count_of_employees>0)
+BEGIN
+
+SELECT @empno=empid
+     ,@var_ename=ename
+	 ,@var_emp_loc=emp_loc
+	 ,@var_dept_id=dept_id
+ FROM emp_cond
+ WHERE empid=@count_of_employees
+
+ IF EXISTS(SELECT *
+             FROM emp_cond_target
+			 where empid=@empno
+			 )
+	BEGIN
+	    UPDATE  emp_cond_target
+		 SET   ename=@var_ename
+				,emp_loc=@var_emp_loc
+				,dept_id=@var_dept_id
+		 WHERE   empid=@empno
+	END
+ELSE 
+   BEGIN
+		   INSERT
+			 INTO emp_cond_target
+			 SELECT @empno,@var_ename,@var_emp_loc,@var_dept_id
+     END
+
+SET @count_of_employees=@count_of_employees-1
+
+END 
+------------------------
+MERGE emp_cond_target as tgt
+Using (SELECT empid
+			,ename
+			,emp_loc
+			,dept_id
+       FROM  emp_cond
+	   )as src
+
+ON src.empid=tgt.empid
+WHEN MATCHED
+THEN UPDATE  
+SET          
+		    ename=src.ename
+		, emp_loc=src.emp_loc
+		, dept_id=src.dept_id
+    
+WHEN NOT MATCHED BY TARGET
+THEN INSERT   
+    VALUES(src.empid
+	       ,src.ename
+		   ,src.emp_loc
+		   ,src.dept_id
+		   )
+WHEN NOT MATCHED BY SOURCE
+THEN DELETE;
+
+
+
+
+
+
+

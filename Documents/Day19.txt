@@ -1,0 +1,114 @@
+
+To find out the missing numbers
+----------------------------------
+CREATE TABLE Missing_numbers(miss_id INT IDENTITY(1,1),ename varchar(50))
+INSERT
+ INTO Missing_numbers(ename)
+
+ SELECT newid()
+ GO 20
+
+
+select * from  Missing_numbers
+ ------------------------------
+
+
+ CREATE   table #temp (ID INT IDENTITY(20,-1),CNAME varchar(50))
+
+ INSERT
+  INTO #temp
+  SELECT NEWID()
+  GO 20
+
+Select  *
+ from #temp tmp
+ LEFT JOIN Missing_numbers
+ ON tmp.id=miss_id
+ where miss_id is null
+ 
+ 
+ 
+
+ /*******************FINDING RUNNING TOTAL***********/
+
+
+ CREATE TABLE  Running_total (id INT,amount INT)
+
+ INSERT
+  INTO Running_total
+  SELECT 1,10
+  UNION ALL
+  SELECT 2,20
+  UNION ALL
+  SELECT 3,30
+  UNION ALL
+  SELECT 4,40
+
+ ;with cte as
+ (                   
+ SELECT id,amount 
+  FROM Running_total
+  where id =1
+  UNION ALL
+  SELECT rt.id,rt.amount+cte.amount amount
+   FROM Running_total rt
+   INNER JOIN CTE
+   ON CTE.id+1=rt.id
+  )
+
+  select cte.id
+  ,Running_total.amount
+  ,cte.amount running_total
+  from cte 
+  INNER JOIN Running_total
+  ON cte.id=Running_total.id
+  
+CONDITIONAL STATMENT
+------------------------------
+DECLARE @X INT =10
+DECLARE @Y INT=20
+
+IF (@X=@Y)
+PRINT 'Both are equal'
+
+ELSE IF (@X>@Y)
+PRINT 'X is greater than Y'
+
+ELSE IF (@X<@Y)
+BEGIN
+	PRINT 'X is LESS than Y'
+	PRINT 'X is LESS than Y'
+END
+ELSE 
+PRINT 'UNKNOWN' 
+
+
+CREATE TABLE CUSTOMER(ID INT IDENTITY(1,1)
+                     ,EMAIL VARCHAR(200)
+					 ,mobile_number VARCHAR(200))
+
+DECLARE @emailid VARCHAR(200)='abc@gmail.com'
+DECLARE @mobile_number VARCHAR(200)='8050238628'
+
+IF EXISTS (SELECT 1
+            FROM customer
+			WHERE EMAIL=@emailid)
+BEGIN
+PRINT 'ENETERED INTO EXISTS BLOCK'
+UPDATE CUSTOMER
+SET mobile_number=@mobile_number
+WHERE EMAIL=@emailid
+
+END
+ELSE 
+ BEGIN 
+    PRINT 'ENETERED INTO ELSE BLOCK'
+      INSERT
+	   INTO CUSTOMER
+	   SELECT @emailid,@mobile_number
+ END 
+
+
+
+  
+  
